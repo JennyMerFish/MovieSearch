@@ -2,7 +2,7 @@ async function returnMovies() {
     const searchResults = document.querySelector(".search-results");
     searchResults.innerHTML =""
     const input = document.querySelector(".inputfield");
-    const movies = await fetch("http://www.omdbapi.com/?apikey=6593b869&s=" + input.value);
+    const movies = await fetch("https://www.omdbapi.com/?apikey=6593b869&s=" + input.value);
     const jsonMovies = await movies.json();
     console.log(jsonMovies)
     for (const movie of jsonMovies.Search) {
@@ -16,7 +16,7 @@ async function returnMovies() {
         const movieTitlesBox = document.createElement("h3");
         movieTitlesBox.innerhtml = ""
         movieTitlesBox.innerHTML = movie.Title;
-        movieLink.href = ("http://www.imdb.com/title/" + movie.imdbID);
+        movieLink.href = ("https://www.imdb.com/title/" + movie.imdbID);
         movieLink.target = "_blank"
         movieLink.appendChild(moviePostersBox)
         moviePosterTitleandImg.append(movieLink, movieTitlesBox);
